@@ -1,7 +1,7 @@
 from flask import render_template, redirect, request
 from app import app
 from models.books import books
-from model.book import *
+from models.book import *
 
 
 

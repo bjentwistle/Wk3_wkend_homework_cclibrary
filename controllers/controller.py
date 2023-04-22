@@ -25,9 +25,9 @@ def add_book():
     add_new_book(new_book)
     return render_template('index.html', title='Home', books=books) #add redirect here instead of render 
 
-# @app.route("/books/book/<unique_id>", methods =['POST'])
-# def remove_book(unique_id):
-#     for book in books:
-#         if unique_id == book.unique_id:
-#             books.remove(book)
-#     return redirect("/books")
+@app.route("/books/delete/<unique_id>", methods =['POST'])
+def remove_book(unique_id):
+    for book in books:
+        if unique_id == book.unique_id:
+            books.remove(book)
+    return redirect("/books")

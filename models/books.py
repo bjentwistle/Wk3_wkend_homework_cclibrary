@@ -12,7 +12,8 @@ books = [book1, book2, book3]
 def add_new_book(book):
     books.append(book)
 
-#def remove_book_to_library(book):
+# def remove_book_to_library(unique_id):
+#     books.remove(unique_id)
 
 
 

@@ -1,6 +1,6 @@
 from flask import render_template, redirect, request
 from app import app
-from models.books import books
+from models.books import *
 from models.book import *
 
 
@@ -12,19 +12,18 @@ def index():
 def show_selected_book(index):
     return render_template("selected_book.html", book =books[int(index)]) #using the hyperlink added in the html/jinja file
 
-#@app.route('/events', methods = ['POST'])
-# def add_event():
-#     date = request.form['date']
-#     split_date = date.split("-")
-#     date = datetime.date(int(split_date[0]), int(split_date[1]), int(split_date[2]))
-#     name = request.form['name']
-#     guests = request.form['guests']
-#     recurring = True if 'recurring' in request.form else False # will cause errors if not ticked hence else False is needed.
-#     room_location = request.form['room_location']
-#     description = request.form['description']
-#     new_event = Event(date, name, guests, recurring, room_location, description)
-#     add_new_event(new_event)
-#     return render_template('index.html', title='Home', events=events) #add redirect here instead of render 
+@app.route('/books', methods = ['POST'])
+def add_book():
+    title = request.form['title']
+    author = request.form['author']
+    genre = request.form['genre']
+    loaned = True if 'loaned' in request.form else False # will cause errors if not ticked hence else False is needed.
+    location = request.form['location']
+    synopsis = request.form['synopsis']
+    unique_id = request.form['unique_id']
+    new_book = Book(title, author, genre, loaned, location, synopsis, unique_id)
+    add_new_book(new_book)
+    return render_template('index.html', title='Home', books=books) #add redirect here instead of render 
 
 # @app.route("/books/book/<unique_id>", methods =['POST'])
 # def remove_book(unique_id):

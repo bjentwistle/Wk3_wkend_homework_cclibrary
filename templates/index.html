@@ -12,6 +12,7 @@
 <div class = "book">
 <h2> Title: {{ book.title}} </h2>
 <h3> Author: {{ book.author }} </h3>
+<a href = "/books/{{ books.index(book) }}" > Show book details </a> <!--add a link to each order selcted by index in orders /-->
 <p> Genre: {{ book.genre }} </p>
 <p> Location: {{ book.location }} </p>
 <p> Synopsis: {{ book.synopsis }} </p>
@@ -20,16 +21,51 @@
     <p><i> Loaned </i></p>
     {% endif %}
 
-    <a href = "/books/{{ books.index(book) }}" > Show book details </a> <!--add a link to each order selcted by index in orders /-->
 
-<!-- need to add my delete book function first
-    <form class = 'form-inline' action='/events/delete/{{book.title}}' method= 'post'>
+    <form class = 'form-inline' action='/books/delete/{{book.title}}' method= 'post'>
         <input type = 'submit' value = 'Delete Book'>
     </form>
--->
+
 </div>
 
 {% endfor %}
 </div>
+<a class = form-inline>
+    <h1>Add a new book: </h1>
+    <form action="/books" method="post"> 
+    <!-- POST request order
+        self.title = title
+        self.author = author
+        self.genre = genre
+        self.loaned = loaned
+        self.location = location
+        self.synopsis = synopsis
+        self.unique_id = unique_id
+        -->
+
+    <label class = label for="title">Book Title</label>
+    <input type="label" name="title" id="title">
+
+    <label class = label for="title">Author - name</label>
+    <input type="label" name="author" id="author">
+
+    <label class = label for="title">Genre</label>
+    <input type="label" name="genre" id="genre">
+
+    <label class = label for="title">Loaned</label>
+    <input type="checkbox" name="loaned" id="loaned">
+
+    <label class = label for="title">Location</label>
+    <input type="text" name="location" id="room_location">
+    
+    <label for="description">Synopsis</label>
+    <textarea  name="synopsis" id="synopsis" rows="3" cols="30"></textarea>
+
+    <label class = label for="title">Unique ID</label>
+    <input type="text" name="unique_id" id="unique_id">
+
+    <input type="submit" value="Add Book">
+    </form>
+    </a>
 
 {% endblock %}

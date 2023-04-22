@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class = top-border>
-    <div class="centered"><strong>Books Galore!</strong></div>
+    <div class="centered"><strong>Books Galore Library!</strong></div>
     <img src="{{ url_for('static', filename='read.jpg') }}" alt = "read bookcase" style='width:100%;'>
 </div>
 
@@ -19,6 +19,9 @@
     {% if book.loaned %}
     <p><i> Loaned </i></p>
     {% endif %}
+
+    <a href = "/books/{{ books.index(book) }}" > Show book details </a> <!--add a link to each order selcted by index in orders /-->
+
 <!-- need to add my delete book function first
     <form class = 'form-inline' action='/events/delete/{{book.title}}' method= 'post'>
         <input type = 'submit' value = 'Delete Book'>

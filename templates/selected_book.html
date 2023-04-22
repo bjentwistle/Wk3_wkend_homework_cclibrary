@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<body>
+    <h1 class="selected_book"> Book details for {{ book.title }} </h1> 
+    <div>
+        <h3>Title: {{ book.title}}</h3>
+        <p> Author: {{ book.author }} </p>
+        <p>Genre: {{ book.genre }}</p>
+        <p>Location: {{ book.location }} </p>
+        <p>Synopsis: {{ book.synopsis }} </p>
+    </div>
+    <a href = "/books"> Back to all books</a>
+</body>
+
+{% endblock %}

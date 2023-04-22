@@ -21,7 +21,6 @@ justify-content: center;
     border: 15px solid #555;
     margin-left: 10%;
     margin-right: 10%;
-
 }
 
 .centered {
@@ -51,27 +50,58 @@ justify-content: center;
     border: 10px;
 }
 
+.form-inline-delete{
+    align-self: center;
+    padding: 12px 16px;
+    border: solid 5px;
+    border-color: red;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+
+}
+
+a.add_book_area {
+    justify-content: center;
+    margin: 20px,20px,20px,20px;
+}
+
+.form-inline-add{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start; 
+}
+
+.add_book {
+    align-self: center;
+    font-style: bold;
+    padding: 12px 16px;
+    border: solid 5px;
+    border-color: greenyellow;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    
+}
+
 .footer {
-    margin: 20px;
+    grid-template-areas: 'myArea myArea . .' 'myArea myArea . .';
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
     row-gap: 25px;
     column-gap: 25px;
 }
 
 .single-picture {
-
     margin: 8px;
     Padding: 10px,10px,10px,10px;
-    overflow: hidden; }
+    overflow: hidden;
+}
 
 .img {
-    max-width: 100%;
-    margin: 20px;
+    height: 250px;
+    max-width: 100%;     /* Set the max-width property to 100% */
+    margin: 20px,20px,20px,20px;
     border: 5px solid #555;
-
-    /* Set the max-width property to 100% */
     }

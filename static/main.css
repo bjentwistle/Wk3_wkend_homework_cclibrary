@@ -4,6 +4,12 @@ background-color: antiquewhite;
 justify-content: center;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+
+}
+
 .navLink{
     font: Arial;
     list-style: none;
@@ -33,17 +39,19 @@ justify-content: center;
 
 .book-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around; 
 }
 
 .book {
     font-family: Arial, Helvetica, sans-serif;
-    justify-content: left;
     display: flex;
-    flex-direction: column;
-    width: 20vw;
+    justify-content: left;
+    align-items: top;
+    justify-content: space-around;
+    flex-direction: row;
+    width: auto;
     background-color: #77b3e8;
     padding: 10px;
     margin:10px;
@@ -87,6 +95,7 @@ a.add_book_area {
 .footer {
     grid-template-areas: 'myArea myArea . .' 'myArea myArea . .';
     display: grid;
+    margin: 20px;
     justify-content: center;
     align-items: center;
     row-gap: 25px;

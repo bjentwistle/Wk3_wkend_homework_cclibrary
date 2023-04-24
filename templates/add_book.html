@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Add a new book: </h1>
+<a class = add_book_area >
+    <form class = form-inline-add action="/books" method="post"> 
+
+    <label class = label for="title">Book Title</label>
+    <input type="text" name="title" id="title">
+
+    <label class = label for="title">Author - name</label>
+    <input type="text" name="author" id="author">
+
+    <label class = label for="title">Genre</label>
+    <input type="text" name="genre" id="genre">
+
+    <label class = label for="title">Loaned</label>
+    <input type="checkbox" name="loaned" id="loaned" >
+
+    <label class = label for="title">Location</label>
+    <input type="text" name="location" id="room_location" placeholder="Aisle #, shelf letter">
+    
+    <label for="description">Synopsis</label>
+    <textarea  name="synopsis" id="synopsis" rows="3" cols="30"></textarea>
+
+    <label class = label for="title">Unique ID</label>
+    <input type="text" name="unique_id" id="unique_id" placeholder="Must be unique">
+
+    <input class = add_book type="submit" value="Add Book" style="font-weight: bold;">
+    </form>
+    </a>
+
+
+
+{% endblock %}
